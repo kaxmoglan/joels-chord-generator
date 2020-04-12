@@ -4,7 +4,7 @@ let     keyboard = ['C', 'C#', 'D', 'E♭', 'E', 'F', 'F#', 'G', 'A♭', 'A', 'B
                     'C', 'C#', 'D', 'E♭', 'E', 'F', 'F#', 'G', 'A♭', 'A', 'B♭', 'B'],
 
         ib9 = {name: '♭9', search: ' b9 ', note: 1},
-        i9 = {name: '9', search: ' 9 ', note: 2},
+        i9 = {name: '2/9', search: ' 9 ', note: 2},
         ib3 = {name: '♭3/#9 ', search: ' b3 ', note: 3},
         i3 = {name: '3/10', search: ' 3 ', note: 4},
         i4 = {name: '4/11', search: ' 4 ', note: 5},
@@ -13,7 +13,7 @@ let     keyboard = ['C', 'C#', 'D', 'E♭', 'E', 'F', 'F#', 'G', 'A♭', 'A', 'B
         ib6 = {name: '#5/♭6', search: ' #5 ', note: 8},
         i6 = {name: '6/13', search: ' 6 ', note: 9},
         ib7 = {name: '♭7', search: ' b7 ', note: 10},
-        i7 = {name: '7', search: ' 7 ', note: 11},
+        i7 = {name: 'maj7', search: ' 7 ', note: 11},
 
         intervals = [ib9, i9, ib3, i3, i4, ib5, i5, ib6, i6, ib7, i7];
 
@@ -26,12 +26,13 @@ let     major = {name: 'Major', formula: ' 1 3 5 ', answer: '1, 3, 5', notes: [0
         sixth = {name: 'Sixth', formula: ' 1 3 5 6 ', answer: '1, 3, 5, 6', notes: [0, 4, 7, 9]},
         seventh = {name: 'Seventh', formula: ' 1 3 5 b7 ', answer: '1, 3, 5, ♭7', notes: [0, 4, 7, 10]},
         ninth = {name: 'Ninth', formula: ' 1 3 5 b7 9 ', answer: '1, 3, 5, ♭7, 9', notes: [0, 4, 7, 10, 14]},
-        ss9 = {name: '6/7/9', formula: ' 1 3 5 6 b7 9 ', answer: '1, 3, 5, 6, ♭7, 9', notes: [0, 4, 7, 9, 10, 14]},
         s9 = {name: '6/9', formula: ' 1 3 5 6 9 ', answer: '1, 3, 5, 6, 9', notes: [0, 4, 7, 9, 14]},
         sb9 = {name: '7 ♭9', formula: ' 1 3 5 b7 b9 ', answer: '1, 3, 5, ♭7, ♭9', notes: [0, 4, 7, 10, 14]},
         ss9f10 = {name: '7 #9 (flattened 10th)', formula: ' 1 3 5 b7 b3 ', answer: '1, 3, 5, ♭7, ♭10', notes: [0, 4, 7, 10, 15]},
         maj7 = {name: 'Maj7 (Δ)', formula: ' 1 3 5 7 ', answer: '1, 3, 5, 7', notes: [0, 4, 7, 11]},
         maj9 = {name: 'Maj9', formula: ' 1 3 5 7 9 ', answer: '1, 3, 5, 7, 9', notes: [0, 4, 7, 11, 14]},
+        maj79s11 = {name: 'Maj7/9/#11', formula: ' 1 3 5 7 9 b5', answer: '1, 3, 5, 7, 9, #11', notes: [0, 4, 7, 11, 14, 18]},
+        maj79s1113 = {name: 'Maj7/9/#11/13', formula: ' 1 3 5 7 9 b5 6', answer: '1, 3, 5, 7, 9, #11, 13', notes: [0, 4, 7, 11, 14, 18, 21]},
         maj69 = {name: 'Maj6/9', formula: ' 1 3 5 6 7 9 ', answer: '1, 3, 5, 6, 7, 9', notes: [0, 4, 7, 9, 11, 14]},
         thirteen = {name: '13', formula: '1 3 7 9 6 ', answer: '1, 3, 7, 9, 13', notes: [0, 4, 11, 14, 21]},
 
@@ -58,7 +59,6 @@ let     major = {name: 'Major', formula: ' 1 3 5 ', answer: '1, 3, 5', notes: [0
         sixb5 = {name: '6 ♭5', formula: ' 1 3 b5 6 ', answer: '1, 3, ♭5, 6', notes: [0, 4, 6, 9]},
         sevenb5 = {name: '7 ♭5', formula: ' 1 3 b5 b7 ', answer: '1, 3, ♭5, ♭7', notes: [0, 4, 6, 10]},
         nineb5 = {name: '9 ♭5', formula: ' 1 3 b5 b7 9 ', answer: '1, 3, ♭5, ♭7, 9', notes: [0, 4, 6, 10, 14]},
-        b5b9 = {name: '♭5 ♭9', formula: ' 1 3 b5 b9 ', answer: '1, 3, ♭5, ♭9', notes: [0, 4, 6, 13]},
         maj7b5 = {name: 'Maj7 ♭5', formula: ' 1 3 b5 7 ', answer: '1, 3, ♭5, 7', notes: [0, 4, 6, 11]},
 
         dimtri = {name: 'Diminished Triad (°)', formula: ' 1 b3 b5 ', answer: '1, ♭3, ♭5', notes: [0, 3, 6]},
@@ -76,10 +76,10 @@ let     major = {name: 'Major', formula: ' 1 3 5 ', answer: '1, 3, 5', notes: [0
 
 // ALL CHORDS
 
-let chords =    [major, add9, addb9, tenth, sixth, seventh, ninth, ss9, s9, sb9, ss9f10, 
-                maj7, maj9, maj69, thirteen, minor, min10, min6, min7, min9, min11, min69, minmaj7, 
+let chords =    [major, add9, addb9, tenth, sixth, seventh, ninth, s9, sb9, ss9f10, 
+                maj7, maj9, maj79s11, maj79s1113, maj69, thirteen, minor, min10, min6, min7, min9, min11, min69, minmaj7, 
                 minmaj79, minmaj7911, min713, augmented, aug7, aug79, aug7s9, aug7b9, augmaj7, flat5, 
-                sixb5, sevenb5, nineb5, b5b9, maj7b5, dimtri, dim7, min7b5, dimmaj7, sus2, majsus2, 
+                sixb5, sevenb5, nineb5, maj7b5, dimtri, dim7, min7b5, dimmaj7, sus2, majsus2, 
                 sus4, eleven, sus13, thirteens11];
 
 // HTML ELEMENTS
