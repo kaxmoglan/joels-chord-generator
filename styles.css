@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+a{
+	color: #283593;
+	text-decoration: none;
+}
+h3{
+	margin-top: 12px;
+}
+*{
+	margin:0px;
+}
+body{
+	background-color: cyan;
+	font-family: 'Roboto', sans-serif;
+}
+main{
+	border-radius: 10px;
+	background-color: hotpink;
+	margin-top: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: calc((100% - 580px) / 2);
+    width: 550px;
+    text-align: center;
+}
+#status{
+	margin-bottom: 25px;
+	padding: 25px 25px 25px 25px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: blue;
+	color: #FFFFFF;
+	font-size: 25px;
+	font-family: 'Roboto Mono', monospace;
+}
+section#Slots{
+	border-radius: 15px;
+    background-color: #FAFAFA;
+    text-align: center;
+    /* padding-bottom: 40px; */
+	padding-top: 10px;
+	height: 400px;
+}
+h3 {
+    font-size: 1.2em;
+}
+#button{
+    margin-top: 25px;
+    margin-bottom: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: yellow;
+	color: black;
+    font-size: 25px;
+    width: 550px;
+}
+#button2, #button3{
+	margin-top: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: rgb(37, 37, 37);
+    color: yellow;
+    font-size: 1.2em;
+    width: 225px;
+    /* margin-left: 25px; */
+}
+#button:hover{
+    background-color: black;
+    color: white;
+}
+#button2:hover, #button3:hover{
+    background-color: yellow;
+    color: black;
+}
+section#options{
+	margin-top: 20px;
+	padding-top: 5px;
+	border-radius: 5px;
+	background-color: lime;
+	color: #FFFFFF;
+}
+#audio {
+    margin-left: 45%;
+}
+.option{
+	padding-left: 5px;
+}
+
+#slot1, #slot2, #slot3{
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 40px;
+	background-size: 150px;
+	width: 450px;
+	height: 75px;
+}
+
+#s1, #s2 {
+    margin-top: 10px;
+    font-size: 1.8em;
+}
+
+#s3, #s3b {
+	margin-top: 10px;
+	font-size: 1.6em;
+}
+
+#s3b {
+	font-size: 1.2em;
+}
+
+#interval {
+    font-size: 2em;
+    text-align: center;
+    width: 100px;
+    /* margin-left: 225px; */
+    margin-top: 10px;
+}
+
+#intervalLabel {
+    font-size: 1.1em;
+    text-align: center;
+    color: blue;
+    text-emphasis: bold;
+    
+}
